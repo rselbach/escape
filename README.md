@@ -1,3 +1,5 @@
+![Go tests](https://github.com/rselbach/escape/actions/workflows/gotest.yml/badge.svg)
+
 # escape
 Utility package to escape/unescape strings using a custom set of unwanted characters
 

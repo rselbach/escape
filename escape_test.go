@@ -178,7 +178,19 @@ func ExampleEscape_Escape() {
 }
 
 func ExampleEscape_Escape_customMarker() {
-	ge := escape.New(",.:")
-	fmt.Println(ge.Escape("foo,bar.baz:"))
+	e := escape.New(",.:")
+	fmt.Println(e.Escape("foo,bar.baz:"))
 	// Output: foo%2cbar%2ebaz%3a
+}
+
+func ExampleNew() {
+	e := escape.New("$,")
+	fmt.Println(e.Escape("foo: $12,34"))
+	// Output: foo: %2412%2c34
+}
+
+func ExampleNewWithMarker() {
+	e := escape.NewWithMarker(",.:", '$')
+	fmt.Println(e.Escape("foo,bar.baz:"))
+	// Output: foo$2cbar$2ebaz$3a
 }
